@@ -11,32 +11,68 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 	private int longestTweetLength = 0;
 	private HashMap<String, List<String>> followersMap = new HashMap<>();
 	private HashMap<String, List<String>> blockedMap = new HashMap<>();
+	private Map<String, HashSet<String>> blockedByMap = new HashMap<>();
+	private String maxBlockedUser = null;
+	private Integer maxBlockedCount = null;
+
 	private HashMap<String, List<UUID>> likedMap = new HashMap<>();
 	private HashMap<UUID, List<String>> UUIDMap = new HashMap<>();
-	//private HashSet<UUID, List<String>> UUIDShareMap = new HashMap<>();
+
 	private HashMap<String,Integer> followerCount = new HashMap<>();
 	private HashMap<String,Integer> messageCount = new HashMap<>();
+	private HashMap<UUID,Integer> likeCount = new HashMap<>();
+	private UUID maxLikedTweetID = null;
+	private Integer maxLikedTweet = null;
+
 	private HashMap<UUID,List<String>> messageSharedToMap = new HashMap<>();
 	private HashMap<UUID,UUID> replyMap = new HashMap<>();
 
+	private Map<UUID, Integer> messageThreadPosition = new TreeMap<>();
+	private Integer longestThreadLength = 0;
+	private UUID longestThreadUUID = null;
+
+	private String longestReplierName = null;
+	private Integer longestReplier = 0;
+	private Map<String, Integer> productivityCount = new TreeMap<String, Integer>();
 
 
 	@Override
 	public void resetStatsAndSystem() {
 		// TODO Auto-generated method stub
-		
+		longestTweetLength = 0;
+		followersMap.clear();
+		blockedMap.clear();
+		likedMap.clear();
+		UUIDMap.clear();
+		followerCount.clear();
+		messageCount.clear();
+		messageSharedToMap.clear();
+		replyMap.clear();
+
 	}
     
 	@Override
 	public int getLengthOfLongestTweet() {
 		// TODO Auto-generated method stub
-		return 0;
+		return longestTweetLength;
 	}
 
 	@Override
 	public String getMostFollowedUser() {
 		// TODO Auto-generated method stub
-		return null;
+		Map.Entry<String, Integer> maxEntry = null;
+		for (Map.Entry<String , Integer> entry : followerCount.entrySet())
+		{
+			if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0)
+			{
+				maxEntry = entry;
+			}
+		}
+		if(maxEntry != null){
+			return maxEntry.getKey();
+		} else {
+			return null;
+		}
 	}
 
 	@Override
@@ -114,26 +150,64 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 		}
 		blocked.add(follower);
 		blockedMap.put(user, blocked);
+
+
+		//Most blocked
+		HashSet<String> blockedBy = blockedByMap.get(follower);
+		if (blockedBy == null) {
+			blockedBy = new HashSet<String>();
+		}
+		blockedBy.add(user);
+		blockedByMap.put(follower,blockedBy);
+
 		if (followersMap.get(user) != null && followersMap.get(user).contains(follower)){
 			followersMap.get(user).remove(user);
 		}
 		//Update follower Count
 		Integer fCount = followerCount.get(user);
 		followerCount.put(user, new Integer(fCount.intValue() - 1));
+		if (blockedBy.size() > maxBlockedCount){
+			maxBlockedCount = blockedBy.size();
+			maxBlockedUser = follower;
+		} else if(blockedBy.size() > maxBlockedCount) {
+			int compared = follower.compareTo(maxBlockedUser);
+			if (compared < 0){
+				maxBlockedUser = follower;
+
+			}
+		}
 
 	}
+
 
 
 	public void like(String user, UUID messageId){
 		//Check if writer of UUID is not user
 		List<String> listMapped = UUIDMap.get(messageId);
+		Integer lCount = likeCount.get(messageId);
+
 		if (!listMapped.get(1).equals(user)){
 			//Check if already liked
 			List<UUID> likedTweets = likedMap.get(user);
-			if (!likedTweets.contains(messageId)){
-				likedTweets.add(messageId);
-				likedMap.put(user, likedTweets);
-		}
+			if (likedTweets == null) {
+				likedTweets = new ArrayList<>();
+			}
+			if (lCount == null) {
+				lCount = new Integer(0);
+			}
+				if (!likedTweets.contains(messageId)) {
+					likedTweets.add(messageId);
+					likedMap.put(user, likedTweets);
+					likeCount.put(messageId, new Integer(lCount.intValue() + 1));
+				}
+			if (lCount > maxLikedTweet){
+				maxLikedTweet = lCount;
+				maxLikedTweetID = messageId;
+			} else if (lCount.intValue() == maxLikedTweet){
+				maxLikedTweetID = messageId.compareTo(maxLikedTweetID) < 0 ? messageId : maxLikedTweetID;
+			}
+
+
 
 
 		}
@@ -167,10 +241,17 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 			//Handle if user not exist etc
 		messageSharedToMap.put(uuid, sharedTo);
 
+		//Add thread Position
+		messageThreadPosition.put(uuid, 0);
+
 	}
 
 
 	public void reply(String user, UUID originalMessage, String message, UUID newMessage){
+		int messageLength = message.length();
+		if(messageLength > longestTweetLength){
+			longestTweetLength = messageLength;
+		}
 		//Handle check if user follows etc etc
 		//Update Tweet Mapping
 		List<String> newList = new ArrayList<>();
@@ -183,13 +264,50 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 		replyMap.put(originalMessage,newMessage);
 
 		//Update sharedTo map
-		List<String> sharedTo = followersMap.get(user);
+		List<String> sharedTo =  followersMap.get(user);
+		if (sharedTo == null){
+			sharedTo = new ArrayList<>();
+		}
 		List<String>originalMessageList = UUIDMap.get(originalMessage);
-		String originalUser = originalMessageList.get(1);
-		sharedTo.add(originalUser);
+		String originalUser = originalMessageList.get(0);
+		if (!sharedTo.contains(originalUser)){
+			sharedTo.add(originalUser);
+		}
+
 		messageSharedToMap.put(newMessage, sharedTo);
 
+		Integer parentThreadPosition = messageThreadPosition.get(originalMessage);
+		messageThreadPosition.put(newMessage, 1 + parentThreadPosition);
+		//is this the longest thread?
+
+		longestThreadLength = Math.max(longestThreadLength, 1 + parentThreadPosition);
+		if (longestThreadLength == 1 + parentThreadPosition){
+			longestThreadUUID = longestThreadUUID.compareTo(newMessage) < 0 ? newMessage : longestThreadUUID;
+		}
+
+
+
+
+		Integer userReplyCount = productivityCount.get(user);
+		if (userReplyCount == null){
+			userReplyCount = message.length();
+		} else {
+			userReplyCount = userReplyCount + messageLength;
+		}
+		productivityCount.put(user, userReplyCount);
+
+		if (longestReplier == userReplyCount.intValue()){
+			longestReplierName = user.compareTo(longestReplierName) < 0 ? user : longestReplierName;
+		}
+		longestReplier = Math.max(longestReplier, userReplyCount);
+
+
+
+
+
 	}
+
+	//public void
 
 
 

@@ -26,7 +26,7 @@ public class TweetServiceImpl implements TweetService {
 	@Override
 	public UUID reply(String user, UUID originalMessage, String message) throws IOException, IOException {
     	System.out.printf("User %s tweeted replied to message %s with message: %s\n", user, originalMessage, message);
-		return null;
+		return UUID.randomUUID();
 	}
 
 	@Override
