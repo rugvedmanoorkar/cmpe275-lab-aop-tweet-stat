@@ -13,7 +13,7 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 	private HashMap<String, List<String>> blockedMap = new HashMap<>();
 	private Map<String, HashSet<String>> blockedByMap = new HashMap<>();
 	private String maxBlockedUser = null;
-	private Integer maxBlockedCount = null;
+	private Integer maxBlockedCount = 0;
 
 	private HashMap<String, List<UUID>> likedMap = new HashMap<>();
 	private HashMap<UUID, List<String>> UUIDMap = new HashMap<>();
@@ -22,7 +22,7 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 	private HashMap<String,Integer> messageCount = new HashMap<>();
 	private HashMap<UUID,Integer> likeCount = new HashMap<>();
 	private UUID maxLikedTweetID = null;
-	private Integer maxLikedTweet = null;
+	private Integer maxLikedTweet = 0;
 
 	private HashMap<UUID,List<String>> messageSharedToMap = new HashMap<>();
 	private HashMap<UUID,UUID> replyMap = new HashMap<>();
@@ -33,7 +33,7 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 
 	private String longestReplierName = null;
 	private Integer longestReplier = 0;
-	private Map<String, Integer> productivityCount = new TreeMap<String, Integer>();
+	private Map<String, Integer> productivityCount = new TreeMap<>();
 
 
 	@Override
@@ -78,31 +78,31 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 	@Override
 	public UUID getMostPopularMessage() {
 		// TODO Auto-generated method stub
-		return null;
+		return mostSharedMessage();
 	}
 	
 	@Override
 	public String getMostProductiveReplier() {
 		// TODO Auto-generated method stub
-		return null;
+		return longestReplierName;
 	}
 
 	@Override
 	public UUID getMostLikedMessage() {
 		// TODO Auto-generated method stub
-		return null;
+		return maxLikedTweetID;
 	}
 
 	@Override
 	public String getMostUnpopularFollower() {
 		// TODO Auto-generated method stub
-		return null;
+		return maxBlockedUser;
 	}
 
 	@Override
 	public UUID getLongestMessageThread() {
 		// TODO Auto-generated method stub
-		return null;
+		return longestThreadUUID;
 	}
 
 	public UUID tweet(String user, String message){
@@ -161,7 +161,7 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 		blockedByMap.put(follower,blockedBy);
 
 		if (followersMap.get(user) != null && followersMap.get(user).contains(follower)){
-			followersMap.get(user).remove(user);
+			followersMap.get(user).remove(follower);
 		}
 		//Update follower Count
 		Integer fCount = followerCount.get(user);
@@ -200,10 +200,13 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 					likedMap.put(user, likedTweets);
 					likeCount.put(messageId, new Integer(lCount.intValue() + 1));
 				}
+			if (maxLikedTweetID == null) {
+				maxLikedTweetID = messageId;
+			}
 			if (lCount > maxLikedTweet){
 				maxLikedTweet = lCount;
 				maxLikedTweetID = messageId;
-			} else if (lCount.intValue() == maxLikedTweet){
+			} else if (lCount.intValue() == maxLikedTweet && maxLikedTweetID != null){
 				maxLikedTweetID = messageId.compareTo(maxLikedTweetID) < 0 ? messageId : maxLikedTweetID;
 			}
 
@@ -281,7 +284,10 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 		//is this the longest thread?
 
 		longestThreadLength = Math.max(longestThreadLength, 1 + parentThreadPosition);
-		if (longestThreadLength == 1 + parentThreadPosition){
+		if (longestThreadUUID == null){
+			longestThreadUUID = newMessage;
+		}
+		if (longestThreadLength == 1 + parentThreadPosition && longestThreadUUID !=null ){
 			longestThreadUUID = longestThreadUUID.compareTo(newMessage) < 0 ? newMessage : longestThreadUUID;
 		}
 
@@ -295,8 +301,10 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 			userReplyCount = userReplyCount + messageLength;
 		}
 		productivityCount.put(user, userReplyCount);
-
-		if (longestReplier == userReplyCount.intValue()){
+		if (longestReplierName == null){
+			longestReplierName = user;
+		}
+		if (longestReplier == userReplyCount.intValue() && longestReplierName != null){
 			longestReplierName = user.compareTo(longestReplierName) < 0 ? user : longestReplierName;
 		}
 		longestReplier = Math.max(longestReplier, userReplyCount);
@@ -307,10 +315,59 @@ public class TweetStatsServiceImpl implements TweetStatsService {
 
 	}
 
-	//public void
+	public UUID mostSharedMessage(){
+		UUID maxKey = null;
+		int maxCount = 0;
+		for (Map.Entry<UUID, List<String>> entry : messageSharedToMap.entrySet()) {
+			if (entry.getValue().size() > maxCount) {
+				maxKey = entry.getKey();
+				maxCount = entry.getValue().size();
+			}
+			else if(entry.getValue().size() == maxCount && maxKey != null){
+				maxKey = maxKey.compareTo(entry.getKey()) < 0 ? maxKey : entry.getKey();
+				maxCount = entry.getValue().size();
+ 			}
+		}
+		return maxKey;
+	}
 
 
+	public boolean validateReply(String user, UUID originalMessage, String message){
+		List<String> sharedTo = messageSharedToMap.get(originalMessage);
+		if (!sharedTo.contains(user)){
+			return false;
+		}
+		HashSet<String> blockedBy = blockedByMap.get(user);
+		List<String> originalMessageDetails = UUIDMap.get(originalMessage);
+		String originalMessageSender = originalMessageDetails.get(0);
+		if (blockedBy != null) {
+			if (blockedBy.contains(originalMessageSender)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
+	public boolean validateLike(String user, UUID messageId){
+		List<String> originalMessageDetails = UUIDMap.get(messageId);
+		if (originalMessageDetails == null){
+			return false;
+		}
+		List<String> sharedTo = messageSharedToMap.get(messageId);
+		if (!sharedTo.contains(user)){
+			return false;
+		}
+		if(originalMessageDetails.get(0).equals(user)){
+			return false;
+		}
+		List<UUID> likedTweets = likedMap.get(user);
+		if (likedTweets != null) {
+			if (likedTweets.contains(messageId)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
 
 

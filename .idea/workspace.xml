@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d5a6a13-4e7c-4bb7-a734-c247d74a30fe" name="Changes" comment="Added AOP">
+    <list default="true" id="0d5a6a13-4e7c-4bb7-a734-c247d74a30fe" name="Changes" comment="Added chages to logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/RetryAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/RetryAspect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/ValidationAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/ValidationAspect.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +92,14 @@
       <option name="presentableId" value="Default" />
       <updated>1647044073335</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added chages to logic">
+      <created>1647168440182</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647168440182</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,7 +115,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added AOP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AOP" />
+    <MESSAGE value="Added chages to logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added chages to logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -123,97 +133,97 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>175</line>
+          <line>184</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>176</line>
+          <line>185</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>179</line>
+          <line>188</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>180</line>
+          <line>189</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>181</line>
+          <line>190</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>188</line>
+          <line>197</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>189</line>
+          <line>198</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>190</line>
+          <line>199</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>192</line>
+          <line>201</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>210</line>
+          <line>222</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>211</line>
+          <line>223</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>212</line>
+          <line>224</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>213</line>
+          <line>225</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>214</line>
+          <line>226</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>216</line>
+          <line>228</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>218</line>
+          <line>230</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>220</line>
+          <line>232</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>221</line>
+          <line>233</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
-          <line>226</line>
+          <line>238</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -225,21 +235,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/App.java</url>
           <line>25</line>
           <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/App.java</url>
@@ -312,14 +307,532 @@
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>315</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/App.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/App.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/App.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>253</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>254</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>256</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>263</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>270</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>273</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>281</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>282</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>283</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>285</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>289</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>290</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>291</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>286</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>287</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>288</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>205</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>206</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>208</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>210</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
           <line>59</line>
-          <option name="timeStamp" value="93" />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetServiceImpl.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>241</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>244</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>247</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>237</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/RetryAspect.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>297</line>
+          <option name="timeStamp" value="172" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
           <line>298</line>
-          <option name="timeStamp" value="94" />
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>300</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>302</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>306</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>308</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>309</line>
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>318</line>
+          <option name="timeStamp" value="180" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>319</line>
+          <option name="timeStamp" value="181" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>320</line>
+          <option name="timeStamp" value="182" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>322</line>
+          <option name="timeStamp" value="183" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>325</line>
+          <option name="timeStamp" value="184" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>328</line>
+          <option name="timeStamp" value="185" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>326</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/AccessControlAspect.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>351</line>
+          <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>353</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>356</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>358</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>361</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>365</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>366</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>335</line>
+          <option name="timeStamp" value="228" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>336</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>338</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>343</line>
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>344</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/TweetStatsServiceImpl.java</url>
+          <line>347</line>
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/aop/tweet/aspect/StatsAspect.java</url>
+          <line>52</line>
+          <properties class="edu.sjsu.cmpe275.aop.tweet.aspect.StatsAspect" method="afterReply">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
